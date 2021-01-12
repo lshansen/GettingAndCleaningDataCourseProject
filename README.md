@@ -1,6 +1,6 @@
 # Getting And Cleaning Data
-This is the course project for course "Getting and Cleaning Data Course Project" on Coursera.
-The included script run_analysis.R does the following:
+This is the course project for the "Getting and Cleaning Data Course Project" course on Coursera.
+The included script 'run_analysis.R' does the following:
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
