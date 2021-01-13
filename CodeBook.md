@@ -5,7 +5,7 @@ The original data is the <a href="https://d396qusza40orc.cloudfront.net/getdata%
 
 A full description of the data set is available at <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">UCI Center for Machine Learning and Intelligent Systems</a>.
 
-## Modifictaions ##
+## Modifications ##
 The original data was modified by running the 'run_analysis.R' script that does the following:
 
 0. Prepares libraries, gets and reads data
