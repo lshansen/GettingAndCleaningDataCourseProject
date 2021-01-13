@@ -1,4 +1,4 @@
-# Step 0: Prepare library and get data
+# Step 0: Prepare library, get and read data
 
 ## prepare library
 library(dplyr)
@@ -16,7 +16,7 @@ if (!file.exists("UCI HAR Dataset")) {
         unzip(filename)
 }
 
-## assign data frames
+## read data into data frames
 features <- read.table("UCI HAR Dataset/features.txt", col.names = c("n","functions"))
 activities <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("code", "activity"))
 s_test <- read.table("UCI HAR Dataset/test/subject_test.txt", col.names = "subject")
@@ -36,22 +36,23 @@ mergedData <- cbind(s_data, y_data, x_data)
 tidyData <- mergedData %>% select(subject, code, contains("mean"), contains("std"))
 
 # Step 3: Name activities
-tidyData <- activities[tidyData$cosde, 2]
+tidyData <- acitivites[tidyData$cosde, 2]
 
 # Step 4: Label data set with descriptive names
 names(tidyData)[2] = "activity"
-names(tidyData)<-gsub("Acc", "accelerometer", names(tidyData))
-names(tidyData)<-gsub("Gyro", "gyroscope", names(tidyData))
-names(tidyData)<-gsub("BodyBody", "body", names(tidyData))
-names(tidyData)<-gsub("Mag", "Mmgnitude", names(tidyData))
-names(tidyData)<-gsub("^t", "time", names(tidyData))
-names(tidyData)<-gsub("^f", "frequency", names(tidyData))
-names(tidyData)<-gsub("tBody", "timeBody", names(tidyData))
-names(tidyData)<-gsub("-mean()", "mean", names(tidyData), ignore.case = TRUE)
-names(tidyData)<-gsub("-std()", "std", names(tidyData), ignore.case = TRUE)
-names(tidyData)<-gsub("-freq()", "frequency", names(tidyData), ignore.case = TRUE)
-names(tidyData)<-gsub("angle", "angle", names(tidyData))
+names(tidyData)<-gsub("Acc", "Accelerometer", names(tidyData))
+names(tidyData)<-gsub("Gyro", "Gyroscope", names(tidyData))
+names(tidyData)<-gsub("BodyBody", "Body", names(tidyData))
+names(tidyData)<-gsub("Mag", "Magnitude", names(tidyData))
+names(tidyData)<-gsub("^t", "Time", names(tidyData))
+names(tidyData)<-gsub("^f", "Frequency", names(tidyData))
+names(tidyData)<-gsub("tBody", "TimeBody", names(tidyData))
+names(tidyData)<-gsub("-mean()", "Mean", names(tidyData), ignore.case = TRUE)
+names(tidyData)<-gsub("-std()", "STD", names(tidyData), ignore.case = TRUE)
+names(tidyData)<-gsub("-freq()", "Frequency", names(tidyData), ignore.case = TRUE)
+names(tidyData)<-gsub("angle", "Angle", names(tidyData))
+names(tidyData)<-gsub("gravity", "Gravity", names(tidyData))
 
 # Step 5: Create second, independent tidy data set with the average of each subject and each activity variable
-finalTidyData <- tidyData %>% group_by(subject, activity) %>% summarise_all(funs(mean))
-write.table(finalTidyData, "finalTidyData.txt", row.name = FALSE)
+tidyDataSet <- tidyData %>% group_by(subject, activity) %>% summarise_all(funs(mean))
+write.table(tidyDataSet, "tidyDataSet.txt", row.name = FALSE)
