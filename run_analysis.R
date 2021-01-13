@@ -36,7 +36,7 @@ mergedData <- cbind(s_data, y_data, x_data)
 tidyData <- mergedData %>% select(subject, code, contains("mean"), contains("std"))
 
 # Step 3: Name activities
-tidyData <- acitivites[tidyData$cosde, 2]
+tidyData <- activities[tidyData$cosde, 2]
 
 # Step 4: Label data set with descriptive names
 names(tidyData)[2] = "activity"
