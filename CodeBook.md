@@ -3,7 +3,7 @@
 ## Data source ##
 The original data is the <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">UCI HAR Data Set</a>.
 
-A full description of the data set is available at <a href=http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones"> UCI Center for Machine Learning and Intelligent Systems</a>.
+A full description of the data set is available at <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">UCI Center for Machine Learning and Intelligent Systems</a>.
 
 ## Modifictaions ##
 The original data was modified by running the 'run_analysis.R' script that does the following:
@@ -18,8 +18,28 @@ The original data was modified by running the 'run_analysis.R' script that does 
 ## Variables ##
 
 ### Identifiers ###
-
 * subject: ID of the subject
 * activity: name of activity performed by subject
 
 ### Measurements ###
+The remaining variables are all just calculations of mean and standard deviation for these features from the original data set:
+
+* tBodyAcc-XYZ
+* tGravityAcc-XYZ
+* tBodyAccJerk-XYZ
+* tBodyGyro-XYZ
+* tBodyGyroJerk-XYZ
+* tBodyAccMag
+* tGravityAccMag
+* tBodyAccJerkMag
+* tBodyGyroMag
+* tBodyGyroJerkMag
+* fBodyAcc-XYZ
+* fBodyAccJerk-XYZ
+* fBodyGyro-XYZ
+* fBodyAccMag
+* fBodyAccJerkMag
+* fBodyGyroMag
+* fBodyGyroJerkMag
+
+All variables were given descriptive names, i.e 'tBodyAcc-X' > 'TimeBodyAccelerometer.meanX'.
