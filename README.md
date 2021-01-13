@@ -12,4 +12,4 @@ The included script 'run_analysis.R' does the following:
 
 The included file 'tidyDataSet.txt' is the tidy data set that results from running 'run_analysis.R'.
 
-The included file 'codeBook.md' is the code book that describes all the variables in the tidy data set that results from running 'run_analysis.R' as well as the original source for the data.
+The included file 'CodeBook.md' is the code book that describes all the variables in the tidy data set that results from running 'run_analysis.R' as well as the original source for the data.
